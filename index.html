@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rimsha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:#fff;
+  overflow:hidden;
+  text-align:center;
+}
+.page{
+  display:none;
+  height:100vh;
+  width:100vw;
+  padding:40px;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.page.active{display:flex;}
+h1{
+  font-size:3rem;
+  max-width:900px;
+  opacity:0;
+  transition:opacity 1s;
+}
+p{
+  font-size:1.8rem;
+  max-width:900px;
+  opacity:0;
+  transition:opacity 1s;
+  margin-top:20px;
+}
+.bears img{
+  width:120px;
+  margin:10px;
+}
+.buttons{
+  margin-top:30px;
+  position:relative;
+}
+button{
+  font-size:1.5rem;
+  padding:15px 40px;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  margin:15px;
+}
+#yesBtn{
+  background:#2ecc71;color:white;
+}
+#noBtn{
+  background:#e74c3c;color:white;position:absolute;
+}
+.heart{
+  position:absolute;
+  font-size:32px;
+  animation:float 8s linear infinite;
+  opacity:0.7;
+}
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0;}
+  30%{opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+</style>
+</head>
+<body>
 
+<!-- PAGE 1 -->
+<div class="page active">
+  <div class="bears">
+    <img src="https://i.ibb.co/7rF7xF5/male-bear.png" alt="male bear">
+    <img src="https://i.ibb.co/YytxP0p/female-bear.png" alt="female bear">
+  </div>
+  <h1 id="page1Text">Rimsha, do you love me? 🥺❤️</h1>
+  <div class="buttons">
+    <button id="yesBtn">Yes 💖</button>
+    <button id="noBtn">No 💔</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <h1>I knew it 🥹❤️</h1>
+  <p>I love you too, Rimsha. You are my heart, my soul, my everything.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <h1>Your Smile ✨</h1>
+  <p>It heals me in ways you don’t even know.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <h1>Your Eyes 🌟</h1>
+  <p>They see me even when I say nothing.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <h1>Your Hair 💕</h1>
+  <p>Every strand is perfection to me.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+  <h1>Your Voice 🎶</h1>
+  <p>Every word from you feels like music to my soul.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+  <h1>Your Laugh 😍</h1>
+  <p>It’s my favorite sound in the world.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+  <h1>Your Presence 🤍</h1>
+  <p>Just being near you makes everything better.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page">
+  <h1>Everything About You ❤️</h1>
+  <p>I love every part of you — completely and endlessly.</p>
+  <div class="buttons">
+    <button class="nextBtn">Next Page</button>
+    <button class="quitBtn">Quit</button>
+  </div>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page">
+  <h1>Rimsha 🥺❤️</h1>
+  <p>
+    I can’t imagine my life without you now.<br>
+    I need you at any cost, no matter what happens.<br>
+    Your presence is the only thing that truly heals me.<br>
+    Your love completes me.<br>
+    Ya Allah, protect her heart and keep her close to me. Ameen 🤲
+  </p>
+</div>
+
+<script>
+// navigation
+let pages = document.querySelectorAll(".page");
+let currentPage = 0;
+
+function showPage(index){
+  pages[currentPage].classList.remove("active");
+  currentPage = index;
+  pages[currentPage].classList.add("active");
+  // fade in text
+  let h1 = pages[currentPage].querySelector("h1");
+  let p = pages[currentPage].querySelector("p");
+  if(h1) h1.style.opacity = 0;
+  if(p) p.style.opacity = 0;
+  setTimeout(()=>{
+    if(h1) h1.style.opacity = 1;
+    if(p) p.style.opacity = 1;
+  },100);
+}
+
+// first page YES
+document.getElementById("yesBtn").addEventListener("click",()=>showPage(1));
+
+// first page NO
+document.getElementById("noBtn").addEventListener("mouseover",()=>{
+  const no = document.getElementById("noBtn");
+  no.style.left = Math.random()*(window.innerWidth-150)+"px";
+  no.style.top = Math.random()*(window.innerHeight-80)+"px";
+});
+
+// other pages NEXT
+document.querySelectorAll(".nextBtn").forEach((btn,i)=>{
+  btn.addEventListener("click",()=>showPage(i+2));
+});
+
+// Quit button escape
+document.querySelectorAll(".quitBtn").forEach(btn=>{
+  btn.addEventListener("mouseover",()=>{
+    btn.style.left = Math.random()*(window.innerWidth-150)+"px";
+    btn.style.top = Math.random()*(window.innerHeight-80)+"px";
+  });
+});
+
+// floating hearts
+setInterval(()=>{
+  let h = document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},300);
+</script>
+
+</body>
+</html>
